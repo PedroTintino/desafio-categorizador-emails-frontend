@@ -15,13 +15,15 @@ function App() {
     try {
       setLoading(true)
 
-      const response = await fetch("http://127.0.0.1:8000/analyze-email", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/analyze-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ content: subject }),
       })
 
       const data = await response.json()
+
+      console.log("API RESPONSE:", data)
 
       setResults(prev => [
         {
