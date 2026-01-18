@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 📧 Email Analyzer – Classificação Inteligente de Emails
 
 Aplicação web desenvolvida como parte de um desafio técnico cujo objetivo é automatizar a leitura, classificação e sugestão de respostas para emails, utilizando Inteligência Artificial e Processamento de Linguagem Natural (NLP).
