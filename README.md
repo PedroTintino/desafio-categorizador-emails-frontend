@@ -46,3 +46,86 @@ Serviço de IA para:
 Classificação de emails
 
 Geração de respostas automáticas
+
+⚙️ Como Rodar Localmente
+🔹 Backend
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/seu-repo-backend.git
+cd emailanalyzer-back
+
+
+Crie e ative o ambiente virtual:
+
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+
+Instale as dependências:
+
+pip install -r requirements.txt
+
+
+Inicie o servidor:
+
+uvicorn app.main:app --reload
+
+
+Backend disponível em:
+
+http://127.0.0.1:8000
+
+🔹 Frontend
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/seu-repo-frontend.git
+cd emailanalyzer-front
+
+
+Instale as dependências:
+
+npm install
+
+
+Crie o arquivo .env:
+
+VITE_API_URL=http://127.0.0.1:8000
+
+
+Rode o projeto:
+
+npm run dev
+
+
+Frontend disponível em:
+
+http://localhost:5173
+
+🔌 Integração Frontend ↔ Backend
+
+O frontend se comunica com o backend via requisições HTTP POST:
+
+POST /analyze-email
+
+Exemplo de payload:
+{
+  "content": "Happy new year!"
+}
+
+Exemplo de resposta:
+{
+  "category": "Improdutivo",
+  "suggested_response": "Obrigado pela mensagem! Desejamos um ótimo ano para você."
+}
+
+☁️ Deploy
+
+Frontend: Vercel
+
+Backend: Render
+
+O projeto foi configurado para uso de variáveis de ambiente, permitindo fácil adaptação entre ambientes local e produção.
+
