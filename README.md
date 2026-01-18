@@ -1,73 +1,131 @@
-# React + TypeScript + Vite
+📧 Email Analyzer – Classificação Inteligente de Emails
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida como parte de um desafio técnico cujo objetivo é automatizar a leitura, classificação e sugestão de respostas para emails, utilizando Inteligência Artificial e Processamento de Linguagem Natural (NLP).
 
-Currently, two official plugins are available:
+A solução ajuda empresas a lidarem com grandes volumes de emails, reduzindo trabalho manual e aumentando a produtividade das equipes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Funcionalidades
 
-## React Compiler
+📩 Inserção de texto do email para análise
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🤖 Classificação automática em:
 
-## Expanding the ESLint configuration
+Produtivo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Improdutivo
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+💬 Geração de resposta automática sugerida
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+📊 Histórico dos últimos emails analisados
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⏳ Feedback visual de carregamento durante a análise
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🎨 Interface moderna e responsiva
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🧠 Tecnologias Utilizadas
+Frontend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React + TypeScript
+
+Vite
+
+Tailwind CSS
+
+Fetch API para comunicação com o backend
+
+Backend
+
+Python
+
+FastAPI
+
+Pydantic
+
+Serviço de IA para:
+
+Classificação de emails
+
+Geração de respostas automáticas
+
+⚙️ Como Rodar Localmente
+🔹 Backend
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/seu-repo-backend.git
+cd emailanalyzer-back
+
+
+Crie e ative o ambiente virtual:
+
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+
+Instale as dependências:
+
+pip install -r requirements.txt
+
+
+Inicie o servidor:
+
+uvicorn app.main:app --reload
+
+
+Backend disponível em:
+
+http://127.0.0.1:8000
+
+🔹 Frontend
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/seu-repo-frontend.git
+cd emailanalyzer-front
+
+
+Instale as dependências:
+
+npm install
+
+
+Crie o arquivo .env:
+
+VITE_API_URL=http://127.0.0.1:8000
+
+
+Rode o projeto:
+
+npm run dev
+
+
+Frontend disponível em:
+
+http://localhost:5173
+
+🔌 Integração Frontend ↔ Backend
+
+O frontend se comunica com o backend via requisições HTTP POST:
+
+POST /analyze-email
+
+Exemplo de payload:
+{
+  "content": "Happy new year!"
+}
+
+Exemplo de resposta:
+{
+  "category": "Improdutivo",
+  "suggested_response": "Obrigado pela mensagem! Desejamos um ótimo ano para você."
+}
+
+☁️ Deploy
+
+Frontend: Vercel
+
+Backend: Render
+
+O projeto foi configurado para uso de variáveis de ambiente, permitindo fácil adaptação entre ambientes local e produção.
+
