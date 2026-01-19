@@ -6,7 +6,7 @@ interface AnalyzeResultsProps {
 
 export default function AnalyzeResults({ results }: AnalyzeResultsProps) {
   return (
-    <div className="mt-10 max-w-5xl mx-auto mb-5">
+    <div className="mt-10 max-w-5xl mx-auto mb-5 max-md:px-4">
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100">
         <div className="px-6 py-4 border-b">
           <h3 className="text-lg font-semibold text-gray-900">

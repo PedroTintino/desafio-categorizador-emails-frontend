@@ -14,7 +14,7 @@ export default function EmailInput({ onAnalyze, loading }: EmailInputProps) {
   }
 
   return (
-    <div className="mt-8 flex justify-center">
+    <div className="mt-8 flex justify-center max-md:px-4">
       <div className="w-full max-w-xl">
         <div className="flex flex-col gap-3">
           <textarea
