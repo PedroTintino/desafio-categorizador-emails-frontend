@@ -130,3 +130,6 @@ Backend: Render
 
 O projeto foi configurado para uso de variáveis de ambiente, permitindo fácil adaptação entre ambientes local e produção.
 
+Links: 
+https://desafio-categorizador-emails-fronte.vercel.app/
+
